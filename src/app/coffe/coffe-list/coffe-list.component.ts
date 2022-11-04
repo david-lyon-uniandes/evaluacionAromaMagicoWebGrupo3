@@ -10,13 +10,25 @@ import { CoffeService } from '../coffe.service';
 export class CoffeListComponent implements OnInit {
 
   coffes: Array<Coffe> = [];
+  originNumberCoffe: number = 0;
+  blendNumberCoffe: number = 0;
 
   constructor(private coffeService: CoffeService) { }
 
   getExhibitionsByMuseum(): void {
     this.coffeService.getCoffes().subscribe((coffes) => {
       this.coffes = coffes;
-      console.log(this.coffes)
+      this.setDistributionTypeCoffe()
+    });
+  }
+
+  setDistributionTypeCoffe(){
+    this.coffes.forEach(coffe => {
+      if (coffe.tipo.toLowerCase().includes("origen")){
+        this.originNumberCoffe += 1
+      }else{
+        this.blendNumberCoffe += 1
+      }
     });
   }
 
