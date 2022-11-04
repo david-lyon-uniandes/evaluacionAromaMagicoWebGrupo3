@@ -1,20 +1,32 @@
-<div></div>
-<img src="https://mdbootstrap.com/img/new/slides/041.webp" class="img-fluid" alt="..." />
-<table class="table table-striped">
-	<thead class="table-dark">
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">Nombre</th>
-			<th scope="col">Tipo</th>
-			<th scope="col">Region</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let coffe of coffes; index as i">
-			<th scope="row">{{ i + 1 }}</th>
-			<td>{{coffe.nombre}}</td>
-			<td>{{coffe.tipo}}</td>
-      <td>{{coffe.region}}</td>
-		</tr>
-	</tbody>
-</table>
+<div id = 'principal-title'>
+  <p id ='title'>El aroma mágico</p>
+</div>
+<div id ='coffe-image'>
+  <hr>
+  <img src="assets/cafeImagen.jpg" class="img-fluid" alt="image" />
+  <hr>
+</div>
+<div id="coffe-table">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Región</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coffe of coffes; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{coffe.nombre}}</td>
+        <td>{{coffe.tipo}}</td>
+        <td>{{coffe.region}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="contact">
+  <p>Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico</p>
+</div>
+
