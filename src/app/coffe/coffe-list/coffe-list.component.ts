@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Coffe } from '../coffe';
+import { CoffeService } from '../coffe.service';
 
 @Component({
   selector: 'app-coffe-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoffeListComponent implements OnInit {
 
-  constructor() { }
+  coffes: Array<Coffe> = [];
+
+  constructor(private coffeService: CoffeService) { }
+
+  getExhibitionsByMuseum(): void {
+    this.coffeService.getCoffes().subscribe((coffes) => {
+      this.coffes = coffes;
+      console.log(this.coffes)
+    });
+  }
 
   ngOnInit() {
+    this.getExhibitionsByMuseum()
   }
 
 }

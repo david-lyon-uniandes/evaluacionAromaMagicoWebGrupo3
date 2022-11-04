@@ -2,7 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { CoffeListComponent } from './coffe-list.component';
 
 describe('CoffeListComponent', () => {
@@ -11,6 +11,7 @@ describe('CoffeListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [ CoffeListComponent ]
     })
     .compileComponents();

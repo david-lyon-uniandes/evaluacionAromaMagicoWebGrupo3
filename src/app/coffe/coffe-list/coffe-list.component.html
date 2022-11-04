@@ -1,3 +1,20 @@
-<p>
-  coffe-list works!
-</p>
+<div></div>
+<img src="https://mdbootstrap.com/img/new/slides/041.webp" class="img-fluid" alt="..." />
+<table class="table table-striped">
+	<thead class="table-dark">
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Tipo</th>
+			<th scope="col">Region</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let coffe of coffes; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>{{coffe.nombre}}</td>
+			<td>{{coffe.tipo}}</td>
+      <td>{{coffe.region}}</td>
+		</tr>
+	</tbody>
+</table>
